@@ -1,20 +1,13 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+  def home; end
 
-  def dashboard
-  end
+  def dashboard; end
 
-  def messages
-  end
+  def messages; end
 
-  def forum
-  end
+  def forum; end
 
+  def faq; end
 
-  def faq
-  end
-
-  def contact
-  end
+  def contact; end
 end
