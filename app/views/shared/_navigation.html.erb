@@ -10,7 +10,7 @@
   <nav class="nav">
     <div> 
       <%= link_to  root_path, :class=> "nav_logo" do %>
-        <i class="bi bi-brightness-high-fill nav_logo-icon"></i>
+        <%= image_tag("logo.svg", size: "35x35", class: "nav_logo-icon") %>
         <span class="nav_logo-name">AKADEMOS</span> 
       <% end %>
       <div class="nav_list"> 
