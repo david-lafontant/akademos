@@ -11,9 +11,11 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <%= render 'devise_notice' %>
+        <%= render 'shared/devise_notice' %>
           <div data-controller="navigation" class="snippet-body" id="body-pd"> 
+            <% if user_signed_in? %>
             <%= render 'shared/navigation' %>
+            <%end%>
             <div class=" min-vh-100 bg-light">
               <%= yield %>
             </div>
