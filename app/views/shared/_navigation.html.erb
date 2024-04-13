@@ -1,58 +1,49 @@
 <header class="header" id="header">
-        <div class="header_toggle">
-         
-         <i class="bi bi-justify" id="header-toggle"></i>
-         
-         </div>
-        <div class="header_img">
-        
+  <div class="header_toggle">  
+    <i class="bi bi-justify" id="header-toggle"></i>
+  </div>
+  <%= current_user.email %>
+  <div class="header_img">
     <%= image_tag("profile.jpeg") %>
-
-        </div>
-    </header>
-    <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
-            <div> 
-            <a href="#" class="nav_logo"> 
-           
-            
-            <i class="bi bi-brightness-high-fill nav_logo-icon"></i>
-            <span class="nav_logo-name">AKADEMOS</span> 
-            </a>
-                <div class="nav_list"> 
-                    <a href="#" class="nav_link active"> 
-           <i class="bi bi-house-door-fill nav_icon"></i>
-            <span class="nav_name">Acceuil</span> 
-            </a> 
-                <a href="#" class="nav_link"> 
-                <i class="bi bi-speedometer nav_icon"></i>
-                <span class="nav_name">Tableau de bord</span> 
-            </a> 
-
-                    <a href="#" class="nav_link"> 
-
-            <i class="bi bi-people-fill nav_icon"></i>
-            <span class="nav_name">Forum</span> 
-            </a> 
-
-            <a href="#" class="nav_link"> 
-            <i class="bi bi-envelope-at nav_icon"></i>
-            <span class="nav_name">Messages</span> 
-            </a> 
-
-            <a href="#" class="nav_link"> 
-            <i class="bi bi-patch-question-fill nav_icon"></i>
-            <span class="nav_name">FAQ</span> 
-            </a> 
-            <a href="#" class="nav_link"> 
-            <i class="bi bi-person-raised-hand nav_icon"></i>
-            <span class="nav_name">Contactez-nous</span>
-             </a>
-            </div>
-            </div>
-             <a href="#" class="nav_link"> 
-             <i class="bi bi-box-arrow-right"></i>
-             <span class="nav_name">Sortir</span>
-              </a>
-        </nav>
+  </div>
+</header>
+<div class="l-navbar" id="nav-bar">
+  <nav class="nav">
+    <div> 
+      <%= link_to  root_path, :class=> "nav_logo" do %>
+        <%= image_tag("logo.svg", size: "35x35", class: "nav_logo-icon") %>
+        <span class="nav_logo-name">AKADEMOS</span> 
+      <% end %>
+      <div class="nav_list"> 
+        <%= link_to root_path, :class=> "nav_link active" do %>
+          <i class="bi bi-house-door-fill nav_icon"></i>
+          <span class="nav_name">Acceuil</span> 
+        <% end %>
+        <%= link_to dashboard_path, :class=> "nav_link" do %>
+          <i class="bi bi-speedometer nav_icon"></i>
+          <span class="nav_name">Tableau de bord</span>  
+        <% end %>
+        <%= link_to forum_path, :class=> "nav_link" do %>
+          <i class="bi bi-people-fill nav_icon"></i>
+          <span class="nav_name">Forum</span> 
+        <% end %>
+        <%= link_to messages_path, :class=> "nav_link" do %>
+          <i class="bi bi-envelope-at nav_icon"></i>
+          <span class="nav_name">Messages</span> 
+        <% end %>
+        <%= link_to faq_path, :class=> "nav_link" do %>
+          <i class="bi bi-patch-question-fill nav_icon"></i>
+          <span class="nav_name">FAQ</span> 
+        <% end %>
+        <%= link_to contact_path, :class=> "nav_link" do %>
+          <i class="bi bi-person-raised-hand nav_icon"></i>
+          <span class="nav_name">Contactez-nous</span>
+        <% end %>
+      </div>
     </div>
+    <%= link_to  destroy_user_session_path, data: {turbo_method: :delete}, :class=> "nav_link" do %>
+      <i class="bi bi-box-arrow-right"></i>
+      <span class="nav_name">Sortir</span>
+    <% end %>
+  </nav>
+</div>

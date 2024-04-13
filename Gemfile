@@ -70,4 +70,7 @@ group :development do
   # gem "spring"
 end
 
+gem 'devise'
+gem 'devise_invitable', '~> 2.0.0'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'rubocop'
